@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="parent(content,title,script)">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Css Links -->
+    <link rel="stylesheet" data-th-href="@{'./css/output.css'}">
+    <!-- MDN references -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <title th:replace="${title}">welcome</title>
+</head>
+
+<body>
+    <!-- Common header start -->
+
+    <div class="navbar" th:replace="~{navbar :: navbar}"></div>
+
+    <!-- Common header end -->
+
+    <!-- Content starts -->
+
+    <div th:replace="${content}"></div>
+
+    <!-- Content starts -->
+
+    <!-- Scripts will goes here -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script th:replace="${script}"></script>
+</body>
+
+</html>
